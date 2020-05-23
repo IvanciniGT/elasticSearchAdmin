@@ -294,6 +294,7 @@ services:
     container_name: cerebro
     ports:
       - "9000:9000"
+#      - "8080:9000"
     networks:
       - frontnet
     external_links:
@@ -310,14 +311,15 @@ services:
       ELASTICSEARCH_HOSTS: "https://elasticcoordinator1:9200"
       SERVER_NAME: "kibana"
       SERVER_HOST: "kibana"
-      SERVER_SSL_ENABLED: "true"
-      SERVER_SSL_CERTIFICATE: "/etc/kibana/config/certs/kibana/kibana.crt"
-      SERVER_SSL_KEY: "/etc/kibana/config/certs/kibana/kibana.key"
+#      SERVER_SSL_ENABLED: "true"
+#      SERVER_SSL_CERTIFICATE: "/etc/kibana/config/certs/kibana/kibana.crt"
+#      SERVER_SSL_KEY: "/etc/kibana/config/certs/kibana/kibana.key"
       ELASTICSEARCH_USERNAME: "elastic"
       ELASTICSEARCH_PASSWORD: "password"
       ELASTICSEARCH_SSL_CERTIFICATEAUTHORITIES:  "/etc/kibana/config/certs/ca/ca.crt" 
     ports:
       - 5601:5601 
+#      - 8081:5601 
     networks:
       - frontnet
     external_links:
@@ -349,9 +351,9 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - ./nginx_error.log:/etc/nginx/error_log.log
     ports:
-      - 8000:80
-      - 8443:443
-      - 8444:444
+      - 8080:8080
+      - 8081:8081
+      - 8082:8082
     links:
       - coordinator1
       - coordinator2
