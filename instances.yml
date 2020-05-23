@@ -1,0 +1,58 @@
+instances:
+  - name: master1
+    dns:
+      - master1 
+      - localhost
+    ip:
+      - 127.0.0.1
+
+  - name: master2
+    dns:
+      - master2
+      - localhost
+    ip:
+      - 127.0.0.1
+
+  - name: data1
+    dns:
+      - data1
+      - localhost
+    ip:
+      - 127.0.0.1
+
+  - name: data2
+    dns:
+      - data2
+      - localhost
+    ip:
+      - 127.0.0.1
+
+  - name: ingest1
+    dns:
+      - ingest1
+      - localhost
+    ip:
+      - 127.0.0.1
+
+  - name: coordinator1
+    dns:
+      - coordinator1
+      - localhost
+      - elasticcoordinator1
+    ip:
+      - 127.0.0.1
+
+  - name: coordinator2
+    dns:
+      - coordinator2
+      - localhost
+      - elasticcoordinator2
+    ip:
+      - 127.0.0.1
+
+  - name: kibana
+    dns:
+      - kibana
+      - localhost
+    ip:
+      - 127.0.0.1
