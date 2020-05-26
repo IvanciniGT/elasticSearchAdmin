@@ -9,7 +9,7 @@ services:
       - cluster.name=cluster-es
       - discovery.type=single-node
       - bootstrap.memory_lock=true
-      - "ES_JAVA_OPTS=-Xms470m -Xmx470m"
+      - "ES_JAVA_OPTS=-Xms350m -Xmx350m"
     ulimits:
       memlock:
         soft: -1
