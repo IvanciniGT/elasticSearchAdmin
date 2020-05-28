@@ -7,6 +7,8 @@ mkdir -p /var/elasticsearch/data04
 mkdir -p /var/elasticsearch/data05
 mkdir -p /var/elasticsearch/data06
 mkdir -p /var/elasticsearch/data07
+mkdir -p /var/elasticsearch/data08
+mkdir -p /var/elasticsearch/data09
 
 chmod 777 -R /var/elasticsearch/data0*
 

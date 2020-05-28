@@ -1,0 +1,75 @@
+GET _search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+PUT miindice01
+
+PUT miindice01/_settings
+{
+  "index":{
+    "number_of_replicas" :1
+  }
+}
+
+GET miindice01/_settings
+
+HEAD miindice01
+
+DELETE miindice01
+
+
+DELETE indice_a
+PUT indice_a
+{
+  "settings":{
+    "number_of_shards" :2,
+    "number_of_replicas" :2,
+    "index.routing.allocation.require.color" : "azul" ,
+    "index.routing.allocation.enable" : "all"
+  }
+}
+
+PUT indice_b
+{
+  "settings":{
+    "number_of_shards" :4,
+    "number_of_replicas" :1
+  }
+}
+
+
+GET _cluster/allocation/explain
+
+
+
+PUT indice_a/_settings
+{
+  "index.unassigned.node_left.delayed_timeout" : "2s",
+  "index.routing.allocation.enable" : "primaries",
+  "index.routing.allocation.require.color" : "azul" 
+}
+
+GET indice_a
+POST /_cluster/reroute?retry_failed=true
+
+POST indice_a/_doc/1
+{
+  "nombre": "ivan",
+  "apellido": "osuna",
+  "edad": 46
+}
+
+GET indice_*/_search?q=nombre:david
+
+
+
+POST indice_a/_doc
+{
+  "nombre": "david",
+  "apellido": "gonzalez",
+  "edad": 42
+}
+
