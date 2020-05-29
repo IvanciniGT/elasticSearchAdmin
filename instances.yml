@@ -1,14 +1,14 @@
 instances:
-  - name: master1
+  - name: maestro1
     dns:
-      - master1 
+      - maestro1 
       - localhost
     ip:
       - 127.0.0.1
 
-  - name: master2
+  - name: maestro2
     dns:
-      - master2
+      - maestro2
       - localhost
     ip:
       - 127.0.0.1
@@ -27,26 +27,39 @@ instances:
     ip:
       - 127.0.0.1
 
-  - name: ingest1
+  - name: data3
     dns:
-      - ingest1
+      - data3
+      - localhost
+    ip:
+      - 127.0.0.1
+      
+
+  - name: data4
+    dns:
+      - data4
       - localhost
     ip:
       - 127.0.0.1
 
-  - name: coordinator1
+  - name: ingesta1
     dns:
-      - coordinator1
+      - ingesta1
       - localhost
-      - elasticcoordinator1
     ip:
       - 127.0.0.1
 
-  - name: coordinator2
+  - name: ingesta2
     dns:
-      - coordinator2
+      - ingesta2
       - localhost
-      - elasticcoordinator2
+    ip:
+      - 127.0.0.1
+      
+  - name: coordinador1
+    dns:
+      - coordinador1
+      - localhost
     ip:
       - 127.0.0.1
 
